@@ -6,7 +6,7 @@ amends "pkl:Project"
 import "pkl:reflect"
 
 local myModule = reflect.Module(module)
-local ghUri_base = "github.com/TimeTravelPenguin/CatpPklccin"
+local ghUri_base = "github.com/TimeTravelPenguin/pkl.catppuccin"
 local ghUri_dl = "\(ghUri_base)/releases/download"
 
 local packageName: String =
