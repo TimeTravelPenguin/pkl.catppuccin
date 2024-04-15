@@ -1,7 +1,8 @@
 module pkl.catppuccin.json
+import "Catppuccin.pkl" as ctp
 import "pkl:json"
 
-local function dynToPaletteColor(_obj: Dynamic): Color = new {
+local function dynToPaletteColor(_obj: Dynamic): ctp.Color = new {
   name = _obj.name
   order = _obj.order
   hex = _obj.hex
@@ -10,18 +11,18 @@ local function dynToPaletteColor(_obj: Dynamic): Color = new {
   accent = _obj.accent
 }
 
-local function dynToTheme(_obj: Dynamic): Theme = new {
+local function dynToTheme(_obj: Dynamic): ctp.Theme = new {
   name = _obj.name
   order = _obj.order
   dark = _obj.dark
   colors = _obj.colors
             .toMap()
             .mapValues((_, v) -> dynToPaletteColor(v))
-            .toTyped(Palette) // Note that this may cause bad behaviour
+            .toTyped(ctp.Palette) // Note that this may cause bad behaviour
                               // See: https://pkl-lang.org/package-docs/pkl/current/base/Map.html#toTyped()
 }
 
-function fromJson(json: String): Catppuccin =
+function fromJson(json: String): ctp.Catppuccin =
   let (file = read(json))
   let (parsed = new json.Parser {}.parse(file))
   new {

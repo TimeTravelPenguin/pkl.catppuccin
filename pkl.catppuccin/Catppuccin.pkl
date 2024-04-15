@@ -1,6 +1,6 @@
 /// The catppuccin module contains the data structures and functions to work with the Catppuccin theme.
 /// The permalinked version of this module is [palette.json v1.1.1](https://github.com/catppuccin/palette/blob/408f081b6402d5d17b8324b75c6db5998100757d/palette.json).
-module pkl.catppuccin.schema
+module pkl.catppuccin.Catppuccin
 
 typealias Int255 = UInt(this <= 255)
 typealias Degree = Number(this >= 0 && this < 360)
