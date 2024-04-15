@@ -1,0 +1,36 @@
+module Color
+import "Color.pkl"
+
+typealias Int255 = Int(this >= 0 && this <= 255)
+typealias Degree = Float(this >= 0 && this < 360)
+typealias Percent = Float(this >= 0 && this <= 1)
+
+class RGB {
+  r: Int255
+  g: Int255
+  b: Int255
+}
+
+class HSL {
+  h: Degree
+  s: Percent
+  l: Percent
+}
+
+class CtpColor {
+  name: String
+  order: Int
+  hex: String
+  rgb: RGB
+  hsl: HSL
+  accent: Boolean
+}
+
+class CtpTheme {
+  name: String
+  order: Int
+  dark: Boolean
+  colors: Mapping<String, CtpColor>
+}
+
+catppuccin: Mapping<String, CtpTheme>

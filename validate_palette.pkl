@@ -1,0 +1,11 @@
+import "Color.pkl"
+import "pkl:json"
+
+catppuccin_json: String = "https://raw.githubusercontent.com/catppuccin/palette/main/palette.json"
+
+file = read(catppuccin_json)
+parsed = new json.Parser {}.parse(file)
+
+output {
+  value = parsed
+}
