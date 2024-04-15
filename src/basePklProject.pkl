@@ -1,5 +1,7 @@
 module CatpPklccin
 
+// Referencing https://github.com/apple/pkl-pantry/blob/main/packages/basePklProject.pkl
+
 amends "pkl:Project"
 import "pkl:reflect"
 
@@ -7,10 +9,19 @@ local myModule = reflect.Module(module)
 local ghUri_base = "github.com/TimeTravelPenguin/CatpPklccin"
 local ghUri_dl = "\(ghUri_base)/releases/download"
 
+local packageName: String =
+  findRootModule(reflect.Module(module))
+    .relativePathTo(module)
+    .last
+
+local function findRootModule(mod: reflect.Module): Module =
+  let (supermodule = mod.supermodule)
+    if (supermodule == null || !supermodule.isAmend) mod.reflectee
+    else findRootModule(supermodule)
+
 package {
-  name = "CatpPklccin"
+  name = packageName
   baseUri = "package://\(ghUri_dl)/\(name)"
-  version = "0.1.0"
   packageZipUrl = "https://\(ghUri_dl)/\(name)@\(version)/\(name)@\(version).zip"
   license = "MIT"
   authors {
@@ -18,6 +29,6 @@ package {
   }
   description = myModule.docComment
   issueTracker = "https://\(ghUri_base)/issues"
-  sourceCode = "https://\(ghUri_base)n/tree/\(name)@\(version)/packages/\(name)"
+  sourceCode = "https://\(ghUri_base)/tree/\(name)@\(version)/packages/\(name)"
   sourceCodeUrlScheme = "https://\(ghUri_base)/blob/\(name)@\(version)/packages/\(name)%{path}#L%{line}-%{endLine}"
 }

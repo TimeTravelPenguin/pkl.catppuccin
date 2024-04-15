@@ -1,0 +1,25 @@
+import "../catppuccin.pkl" as ctp
+import "pkl:xml"
+
+json: String = "https://raw.githubusercontent.com/catppuccin/palette/main/palette.json"
+catppuccin = ctp.fromJson(json)
+
+output {
+  files {
+    ["converted.pkl"] {
+      value = catppuccin
+    }
+    ["converted.xml"] {
+      value = catppuccin
+      renderer = new xml.Renderer {}
+    }
+    ["converted.yaml"] {
+      value = catppuccin
+      renderer = new YamlRenderer {}
+    }
+    ["converted.json"] {
+      value = catppuccin
+      renderer = new JsonRenderer {}
+    }
+  }
+}

@@ -1,0 +1,107 @@
+/// The catppuccin module contains the data structures and functions to work with the Catppuccin theme.
+/// The permalinked version of this module is [palette.json v1.1.1](https://github.com/catppuccin/palette/blob/408f081b6402d5d17b8324b75c6db5998100757d/palette.json).
+module pkl.catppuccin.catppuccin
+
+import "pkl:json"
+
+typealias Int255 = UInt(this <= 255)
+typealias Degree = Number(this >= 0 && this < 360)
+typealias Percent = Number(this >= 0 && this <= 1)
+
+/// RGB values are integers between 0 and 255.
+class RGB {
+  r: Int255
+  g: Int255
+  b: Int255
+}
+
+/// HSL values are as follows:
+/// [h] is a degree between 0 and 359.
+/// [s] and [l] are percentages between 0 and 1.
+class HSL {
+  h: Degree
+  s: Percent
+  l: Percent
+}
+
+class Color {
+  name: String
+  order: Int
+  hex: String
+  rgb: RGB
+  hsl: HSL
+  accent: Boolean
+}
+
+class Palette {
+  rosewater: Color
+  flamingo: Color
+  pink: Color
+  mauve: Color
+  red: Color
+  maroon: Color
+  peach: Color
+  yellow: Color
+  green: Color
+  teal: Color
+  sky: Color
+  sapphire: Color
+  blue: Color
+  lavender: Color
+  text: Color
+  subtext1: Color
+  subtext0: Color
+  overlay2: Color
+  overlay1: Color
+  overlay0: Color
+  surface2: Color
+  surface1: Color
+  surface0: Color
+  base: Color
+  mantle: Color
+  crust: Color
+}
+
+class Theme {
+  name: String
+  order: Int
+  dark: Boolean
+  colors: Palette
+}
+
+class Catppuccin {
+  mocha: Theme
+  macchiato: Theme
+  frappe: Theme
+  latte: Theme
+}
+
+local function dynToPaletteColor(_obj: Dynamic): Color = new {
+  name = _obj.name
+  order = _obj.order
+  hex = _obj.hex
+  rgb = new {..._obj.rgb}
+  hsl = new {..._obj.hsl}
+  accent = _obj.accent
+}
+
+local function dynToTheme(_obj: Dynamic): Theme = new {
+  name = _obj.name
+  order = _obj.order
+  dark = _obj.dark
+  colors = _obj.colors
+            .toMap()
+            .mapValues((_, v) -> dynToPaletteColor(v))
+            .toTyped(Palette) // Note that this may cause bad behaviour
+                              // See: https://pkl-lang.org/package-docs/pkl/current/base/Map.html#toTyped()
+}
+
+function fromJson(json: String): Catppuccin =
+  let (file = read(json))
+  let (parsed = new json.Parser {}.parse(file))
+  new {
+    mocha = dynToTheme(parsed.mocha)
+    macchiato = dynToTheme(parsed.macchiato)
+    frappe = dynToTheme(parsed.frappe)
+    latte = dynToTheme(parsed.latte)
+  }

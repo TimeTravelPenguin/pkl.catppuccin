@@ -1,0 +1,6 @@
+/// A simple Catppuccin configuration capable of validating themes, and converting to new formats.
+amends "../basePklProject.pkl"
+
+package {
+  version = "1.0.0"
+}
