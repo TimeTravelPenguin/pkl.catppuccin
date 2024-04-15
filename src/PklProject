@@ -7,7 +7,7 @@ local myModule = reflect.Module(module)
 
 package {
   name = "CatpPklccin"
-  baseUri = "package://github.com/TimeTravelPenguin/CatpPklccin/\(name)"
+  baseUri = "package://github.com/TimeTravelPenguin/CatpPklccin/blob/main/src/\(name)"
   version = "0.1.0"
   packageZipUrl = "https://github.com/TimeTravelPenguin/CatpPklccin/releases/download/\(name)@\(version)/\(name)@\(version).zip"
   license = "MIT"
