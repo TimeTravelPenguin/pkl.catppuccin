@@ -6,5 +6,5 @@ package {
 }
 
 dependencies {
-  ["pkl.catppuccin"] = import("../pkl.catppuccin.schema/PklProject")
+  ["pkl.catppuccin"] = import("../pkl.catppuccin/PklProject")
 }

@@ -1,5 +1,5 @@
 module pkl.catppuccin.parse.json
-import "@pkl.catppuccin/schema.pkl" #todo
+import "@pkl.catppuccin/schema.pkl"
 import "pkl:json"
 
 local function dynToPaletteColor(_obj: Dynamic): Color = new {
