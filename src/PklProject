@@ -4,18 +4,20 @@ amends "pkl:Project"
 import "pkl:reflect"
 
 local myModule = reflect.Module(module)
+local ghUri_base = "github.com/TimeTravelPenguin/CatpPklccin"
+local ghUri_dl = "\(ghUri_base)/releases/download"
 
 package {
   name = "CatpPklccin"
-  baseUri = "package://github.com/TimeTravelPenguin/CatpPklccin/blob/main/src/\(name)"
+  baseUri = "package://\(ghUri_dl)/\(name)"
   version = "0.1.0"
-  packageZipUrl = "https://github.com/TimeTravelPenguin/CatpPklccin/releases/download/\(name)@\(version)/\(name)@\(version).zip"
+  packageZipUrl = "https://\(ghUri_dl)/\(name)@\(version)/\(name)@\(version).zip"
   license = "MIT"
   authors {
     "Phillip Smith <TimeTravelPenguin@gmail.com>"
   }
   description = myModule.docComment
-  issueTracker = "https://github.com/TimeTravelPenguin/CatpPklccin/issues"
-  sourceCode = "https://github.com/TimeTravelPenguin/CatpPklccin/tree/\(name)@\(version)/packages/\(name)"
-  sourceCodeUrlScheme = "https://github.com/TimeTravelPenguin/CatpPklccin/blob/\(name)@\(version)/packages/\(name)%{path}#L%{line}-%{endLine}"
+  issueTracker = "https://\(ghUri_base)/issues"
+  sourceCode = "https://\(ghUri_base)n/tree/\(name)@\(version)/packages/\(name)"
+  sourceCodeUrlScheme = "https://\(ghUri_base)/blob/\(name)@\(version)/packages/\(name)%{path}#L%{line}-%{endLine}"
 }
