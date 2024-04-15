@@ -1,0 +1,18 @@
+{
+  "name": "pkl.catppuccin",
+  "packageUri": "package://github.com/TimeTravelPenguin/pkl.catppuccin/releases/download/pkl.catppuccin@1.0.0",
+  "version": "1.0.0",
+  "packageZipUrl": "https://github.com/TimeTravelPenguin/pkl.catppuccin/releases/download/pkl.catppuccin@1.0.0/pkl.catppuccin@1.0.0.zip",
+  "packageZipChecksums": {
+    "sha256": "fbcb8e24b71f6bde04b2c201176b89c676e8f45f6cd636a0d9ca1437458bf2c6"
+  },
+  "dependencies": {},
+  "sourceCodeUrlScheme": "https://github.com/TimeTravelPenguin/pkl.catppuccin/blob/pkl.catppuccin@1.0.0/packages/pkl.catppuccin%{path}#L%{line}-%{endLine}",
+  "sourceCode": "https://github.com/TimeTravelPenguin/pkl.catppuccin/tree/pkl.catppuccin@1.0.0/packages/pkl.catppuccin",
+  "license": "MIT",
+  "authors": [
+    "Phillip Smith <TimeTravelPenguin@gmail.com>"
+  ],
+  "issueTracker": "https://github.com/TimeTravelPenguin/pkl.catppuccin/issues",
+  "description": "A simple Catppuccin configuration capable of validating themes, and converting to new formats."
+}
