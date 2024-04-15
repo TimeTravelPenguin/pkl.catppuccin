@@ -1,4 +1,4 @@
-import "Color.pkl"
+import "package://github.com/TimeTravelPenguin/CatpPklccin/Color.pkl"
 import "pkl:json"
 
 catppuccin_json: String = "https://raw.githubusercontent.com/catppuccin/palette/main/palette.json"
