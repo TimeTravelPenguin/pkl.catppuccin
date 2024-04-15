@@ -1,4 +1,4 @@
-import "../catppuccin.pkl" as ctp
+import "../schema.pkl" as ctp
 import "pkl:xml"
 
 json: String = "https://raw.githubusercontent.com/catppuccin/palette/main/palette.json"

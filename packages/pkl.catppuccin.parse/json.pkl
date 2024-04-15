@@ -1,0 +1,33 @@
+module pkl.catppuccin.parse.json
+import "@pkl.catppuccin/schema.pkl" #todo
+import "pkl:json"
+
+local function dynToPaletteColor(_obj: Dynamic): Color = new {
+  name = _obj.name
+  order = _obj.order
+  hex = _obj.hex
+  rgb = new {..._obj.rgb}
+  hsl = new {..._obj.hsl}
+  accent = _obj.accent
+}
+
+local function dynToTheme(_obj: Dynamic): Theme = new {
+  name = _obj.name
+  order = _obj.order
+  dark = _obj.dark
+  colors = _obj.colors
+            .toMap()
+            .mapValues((_, v) -> dynToPaletteColor(v))
+            .toTyped(Palette) // Note that this may cause bad behaviour
+                              // See: https://pkl-lang.org/package-docs/pkl/current/base/Map.html#toTyped()
+}
+
+function fromJson(json: String): Catppuccin =
+  let (file = read(json))
+  let (parsed = new json.Parser {}.parse(file))
+  new {
+    mocha = dynToTheme(parsed.mocha)
+    macchiato = dynToTheme(parsed.macchiato)
+    frappe = dynToTheme(parsed.frappe)
+    latte = dynToTheme(parsed.latte)
+  }
