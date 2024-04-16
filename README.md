@@ -13,7 +13,7 @@
 
 # Usage
 
-Do check out the [Examples](./examples) directory for demonstrations of use.
+Do check out the [Examples](./pkl.catppuccin/examples/) directory for demonstrations of use.
 
 # See also
 
