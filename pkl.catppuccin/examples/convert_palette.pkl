@@ -1,5 +1,4 @@
-import "../json.pkl" as ctp // or,
-// import "https://github.com/TimeTravelPenguin/pkl.catppuccin/releases/download/pkl.catppuccin/json.pkl" as ctp
+import "../json.pkl" as ctp
 
 import "pkl:xml"
 
