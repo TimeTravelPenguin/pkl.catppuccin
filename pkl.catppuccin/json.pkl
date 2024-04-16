@@ -22,8 +22,8 @@ local function dynToTheme(_obj: Dynamic): ctp.Theme = new {
                               // See: https://pkl-lang.org/package-docs/pkl/current/base/Map.html#toTyped()
 }
 
-function fromJson(json: String): ctp.Catppuccin =
-  let (file = read(json))
+function fromJson(_json: String): ctp.Catppuccin =
+  let (file = read(_json))
   let (parsed = new json.Parser {}.parse(file))
   new {
     mocha = dynToTheme(parsed.mocha)
