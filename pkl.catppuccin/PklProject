@@ -8,7 +8,7 @@ local ghUri_dl = "\(ghUri_base)/releases/download"
 package {
   name = "pkl.catppuccin"
   baseUri = "package://\(ghUri_dl)/\(name)"
-  packageZipUrl = "https://\(ghUri_dl)/\(name)@\(version)/\(name)@\(version).zip"
+  packageZipUrl = "https://\(ghUri_dl)/v\(version)/\(name)@\(version).zip"
   license = "MIT"
   version = "1.0.0"
   authors {
@@ -16,6 +16,6 @@ package {
   }
   description = "The Pkl Catppuccin package provides a simple, easy-to-use, and lightweight way to create and manage a Pkl project."
   issueTracker = "https://\(ghUri_base)/issues"
-  sourceCode = "https://\(ghUri_base)/tree/\(name)@\(version)/packages/\(name)"
-  sourceCodeUrlScheme = "https://\(ghUri_base)/blob/\(name)@\(version)/packages/\(name)%{path}#L%{line}-%{endLine}"
+  sourceCode = "https://\(ghUri_base)/tree/v\(version)/packages/\(name)"
+  sourceCodeUrlScheme = "https://\(ghUri_base)/blob/v\(version)/packages/\(name)%{path}#L%{line}-%{endLine}"
 }
