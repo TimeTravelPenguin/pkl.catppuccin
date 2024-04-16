@@ -16,6 +16,6 @@ package {
   }
   description = "The Pkl Catppuccin package provides a simple, easy-to-use, and lightweight way to create and manage a Pkl project."
   issueTracker = "https://\(ghUri_base)/issues"
-  sourceCode = "https://\(ghUri_base)/tree/v\(version)/packages/\(name)"
-  sourceCodeUrlScheme = "https://\(ghUri_base)/blob/v\(version)/packages/\(name)%{path}#L%{line}-%{endLine}"
+  sourceCode = "https://\(ghUri_base)/tree/v\(version)/pkl.catppuccin/\(name)"
+  sourceCodeUrlScheme = "https://\(ghUri_base)/blob/v\(version)/pkl.catppucin/\(name)%{path}#L%{line}-%{endLine}"
 }
