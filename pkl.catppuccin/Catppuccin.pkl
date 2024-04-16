@@ -67,9 +67,7 @@ class Theme {
   colors: Palette
 }
 
-class Catppuccin {
-  mocha: Theme
-  macchiato: Theme
-  frappe: Theme
-  latte: Theme
-}
+mocha: Theme
+macchiato: Theme
+frappe: Theme
+latte: Theme
