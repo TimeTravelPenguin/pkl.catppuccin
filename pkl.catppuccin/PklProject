@@ -10,7 +10,7 @@ package {
   baseUri = "package://\(ghUri_dl)/\(name)"
   packageZipUrl = "https://\(ghUri_dl)/v\(version)/\(name)@\(version).zip"
   license = "MIT"
-  version = "1.0.0"
+  version = "0.1.0"
   authors {
     "Phillip Smith <TimeTravelPenguin@gmail.com>"
   }
