@@ -69,10 +69,10 @@ class Theme {
 }
 
 class Catppuccin {
-  mocha: Theme
-  macchiato: Theme
-  frappe: Theme
   latte: Theme
+  frappe: Theme
+  macchiato: Theme
+  mocha: Theme
 }
 
 catppuccin: Catppuccin

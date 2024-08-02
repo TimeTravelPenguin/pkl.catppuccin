@@ -27,8 +27,8 @@ function fromJson(_json: String): ctp.Catppuccin =
   let (file = read(_json))
   let (parsed = new json.Parser {}.parse(file))
   new {
-    mocha = dynToTheme(parsed.mocha)
-    macchiato = dynToTheme(parsed.macchiato)
-    frappe = dynToTheme(parsed.frappe)
     latte = dynToTheme(parsed.latte)
+    frappe = dynToTheme(parsed.frappe)
+    macchiato = dynToTheme(parsed.macchiato)
+    mocha = dynToTheme(parsed.mocha)
   }
