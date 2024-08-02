@@ -62,6 +62,7 @@ class Palette {
 
 class Theme {
   name: String
+  emoji: String
   order: Int
   dark: Boolean
   colors: Palette

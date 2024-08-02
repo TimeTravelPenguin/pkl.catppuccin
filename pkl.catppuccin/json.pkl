@@ -13,6 +13,7 @@ local function dynToPaletteColor(_obj: Dynamic): ctp.Color = new {
 
 local function dynToTheme(_obj: Dynamic): ctp.Theme = new {
   name = _obj.name
+  emoji = _obj.emoji
   order = _obj.order
   dark = _obj.dark
   colors = _obj.colors
