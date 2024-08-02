@@ -15,6 +15,8 @@
 
 Do check out the [Examples](./pkl.catppuccin/examples/) directory for demonstrations of use.
 
+Note that `palette.pkl` is primarily generated as seen in the previously mentioned example. As such, it is easy to keep the palette updated with the latest changes to the Catppuccin theme.
+
 # See also
 
 Learn more about Pkl [on their website](https://pkl-lang.org).

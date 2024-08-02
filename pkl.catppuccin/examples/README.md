@@ -4,7 +4,7 @@
 
 The Catppuccin palette can be parsed from json and into another type.
 
-You can run the following command in the current directory to download and convert [palette.json v1.1.1](https://github.com/catppuccin/palette/blob/408f081b6402d5d17b8324b75c6db5998100757d/palette.json) into file types `*.pkl`, `*.xml`, `*.yaml`, and as `*.json`, to compare.
+You can run the following command in the current directory to download and convert the official catppuccin [palette.json](<[palette.json](https://github.com/catppuccin/palette/blob/main/palette.json)>) into file types `*.pkl`, `*.xml`, `*.yaml`, and as `*.json`, to compare.
 
 ```
 pkl eval -m ./converted ./convert_palette.pkl
